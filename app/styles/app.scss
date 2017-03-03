@@ -10,11 +10,10 @@ $white: hsl(0, 0%, 21%);
 @import 'font-awesome';
 
 .page {
-  height: 100vh;
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .panel {

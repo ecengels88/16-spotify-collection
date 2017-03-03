@@ -1,20 +1,27 @@
 <template lang="html">
-  <div class="track-list__card">
-    <div class="album-cover">
-      <img src="#" alt="" class="album-cover__pic">
-    </div>
-    <div class="track-info">
-      <h1 class="track-info__artist"></h1>
-      <p class="track-info__song"></p>
-    </div>
-    <div class="spotify-image">
-      <img src="#" alt="" class="spotify-image__pic">
-    </div>
+  <div class="panel-block">
+    <span class="media">
+      <figure class="track__frame media-left">
+        <img src="http://bulma.io/images/placeholders/128x128.png">
+      </figure>
+      <div class="panel-block">
+        <div class="media-content is-fullwidth">
+          <p class="track__artist"><strong>Katy Perry</strong></p>
+          <p class="track__name">Rise</p>
+        </div>
+      </div>
+      <div class="media-right">
+        <a href="#"><span class="icon is-large fa fa-spotify"></span></a>
+      </div>
+    </span>
   </div>
 </template>
 
 <script>
 export default {
+
+  props: ['track'],
+
   data() {
     return {
     };
