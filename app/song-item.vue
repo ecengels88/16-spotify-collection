@@ -1,19 +1,17 @@
 <template lang="html">
-  <div class="panel-block">
-    <span class="media">
+  <div class="panel-block is-marginless media">
       <figure class="track__frame media-left">
-        <img src="http://bulma.io/images/placeholders/128x128.png">
+        <img v-bind:src="track.album.images[0].url">
       </figure>
-      <div class="panel-block">
+
         <div class="media-content is-fullwidth">
-          <p class="track__artist"><strong>Katy Perry</strong></p>
-          <p class="track__name">Rise</p>
+          <p class="track__artist"><strong>{{track.artists[0].name}}</strong></p>
+          <p class="track__name">{{track.name}}</p>
         </div>
-      </div>
+
       <div class="media-right">
-        <a href="#"><span class="icon is-large fa fa-spotify"></span></a>
+        <a v-bind:href="track.external_urls.spotify"><span class="icon is-large fa fa-spotify"></span></a>
       </div>
-    </span>
   </div>
 </template>
 
