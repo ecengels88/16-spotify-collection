@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="panel">
-    <div class="panel-heading">The Black Keys</div>
+    <input class="panel-heading">
       <div class="results">
 <song-item  v-for="current in tracks" v-bind:track="current"></song-item>
       </div>
