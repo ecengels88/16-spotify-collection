@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="panel">
-    <input class="panel-heading">
+    <!-- <form action=""> -->
+      <input class="panel-heading" v-on:submit="search">
+    <!-- </form> -->
       <div class="results">
 <song-item  v-for="current in tracks" v-bind:track="current"></song-item>
       </div>
@@ -10,13 +12,14 @@
 <script>
 import SongItem from './song-item.vue';
 
+
 export default {
   components: {
     SongItem,
   },
 
   created() {
-    fetch('https://api.spotify.com/v1/search?query=black+keys&type=track&offset=0&limit=20')
+    fetch('https://api.spotify.com/v1/search?query=`${bandName}`&type=track&offset=0&limit=20')
     .then(r => r.json())
     .then((curr) => {
       this.tracks = curr.tracks.items;
@@ -30,7 +33,9 @@ export default {
   },
 
   methods: {
+    search(bandName) {
 
+    }
   },
 };
 </script>
