@@ -19,11 +19,7 @@ export default {
   },
 
   created() {
-    fetch('https://api.spotify.com/v1/search?query=`${bandName}`&type=track&offset=0&limit=20')
-    .then(r => r.json())
-    .then((curr) => {
-      this.tracks = curr.tracks.items;
-    });
+    this.search('black keys');
   },
 
   data() {
@@ -34,7 +30,11 @@ export default {
 
   methods: {
     search(bandName) {
-
+      fetch('https://api.spotify.com/v1/search?query=`${bandName}`&type=track&offset=0&limit=20')
+      .then(r => r.json())
+      .then((curr) => {
+        this.tracks = curr.tracks.items;
+      });
     }
   },
 };
