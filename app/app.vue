@@ -2,15 +2,10 @@
   <div class="section">
     <div class="container">
       <div class="panel">
-        <!-- <form action=""> -->
-          <p class="panel-heading">
-
-            <input class="input" placeholder="Search For Your Band" v-on:keydown.enter="search(searchTerm)" v-model="searchTerm">
-          </p>
-        <!-- </form> -->
-          <div class="results">
-      <song-item  v-for="current in tracks" v-bind:track="current"></song-item>
-          </div>
+        <input class="panel-heading" placeholder="Search For Your Band" v-on:keydown.enter="search(searchTerm)" v-model="searchTerm">
+        <div class="results">
+          <song-item  v-for="current in tracks" v-bind:track="current"></song-item>
+        </div>
       </div>
     </div>
   </div>
@@ -26,7 +21,7 @@ export default {
   },
 
   created() {
-    this.search('Hugh Laurie');
+    this.search('Black Keys');
   },
 
   data() {
@@ -39,10 +34,10 @@ export default {
   methods: {
     search(bandName) {
       fetch(`https://api.spotify.com/v1/search?query=${bandName}&type=track&offset=0&limit=20`)
-      .then(r => r.json())
-      .then((curr) => {
-        this.tracks = curr.tracks.items;
-      });
+        .then(r => r.json())
+        .then((curr) => {
+          this.tracks = curr.tracks.items;
+        });
     }
   },
 };
